@@ -33,8 +33,6 @@ public class WorkService {
     public List<Work> findAll() {
         try {
             return repository.findAll();
-        } catch (EntityNotFoundException e) {
-            throw new EntityNotFoundException("No data Found: " + e.getMessage());
         } catch (RuntimeException e) {
             throw new RuntimeException("Unknown error occurred: " + e.getMessage());
         }

@@ -43,8 +43,6 @@ public class ActivityService {
     public Activity findById(long id) {
         try {
             return repository.findById(id).orElseThrow();
-        } catch (EntityNotFoundException e) {
-            throw new EntityNotFoundException("No data Found: " + e.getMessage());
         } catch (RuntimeException e) {
             throw new RuntimeException("Unknown error occurred: " + e.getMessage());
         }
